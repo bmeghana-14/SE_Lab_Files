@@ -1,5 +1,5 @@
-# Climber Lab 4 - Completed
-
+# Climber Lab 4
+LAB4 REPOSITORY : https://github.com/bmeghana-14/37_climber_lab4
 This repository contains the completed version of the assigned `SETAPESU26/37_climber` Pygame lab.
 
 ## Completed tasks
