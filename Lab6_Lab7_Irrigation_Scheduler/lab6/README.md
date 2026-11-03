@@ -1,5 +1,7 @@
 # L6_L7_37 — Irrigation Scheduler
 
+LAB REPOSITORY : https://github.com/bmeghana-14/L6_L7_37_irrigation_scheduler
+
 Lab 6: Code and Branch Coverage
 
 ## About
