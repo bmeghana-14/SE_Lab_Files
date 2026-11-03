@@ -49,14 +49,19 @@ The code works, but only just. It has quality, style and security problems of th
    - **Description:** what the tool flagged and why it matters.
    - **Fix Approach:** the specific change you plan to make.
 
-   Use this table format and add one row for each distinct issue:
+   The following findings are visible in the Lab 5 evidence screenshots. Use them to populate your table, but check each line number and finding against your own saved reports before submitting. The Pylint findings below are shown in the intermediate report screenshot; the Bandit and Flake8 findings are shown in the baseline evidence.
 
    | Issue | Severity | Tool | Type | Line(s) | Description | Fix Approach |
    |-------|----------|------|------|---------|-------------|--------------|
-   | Actual finding from your report | High/Medium/Low | Tool name | Issue category | Line number(s) | Explain the reported problem and its impact | State the planned correction |
-   | ... | ... | ... | ... | ... | ... | ... |
+   | Use of standard pseudo-random generator | Low | Bandit (B311) | Security | 138 | Bandit flags `random.choice()` because the standard pseudo-random generator is not intended for security-sensitive or cryptographic choices. | If the choice is security-sensitive, use a cryptographically secure alternative such as `secrets.choice()`. If it is only a non-security task suggestion, document why ordinary randomness is acceptable. |
+   | Import outside top level | Low | Pylint (C0415) | Maintainability | 106–108 | Imports are performed inside a function rather than at module level. | Move imports to the module level where appropriate, unless a local import is intentionally needed. |
+   | Missing function docstring | Low | Pylint (C0116) | Documentation | 60 | A function has no docstring explaining its purpose. | Add a short, meaningful docstring describing what the function does. |
+   | Missing whitespace around operator | Low | Flake8 (E225) | Style | 12 | An operator is missing the required surrounding whitespace. | Add the appropriate spaces around the operator. |
+   | Too many blank lines | Low | Flake8 (E303) | Style | 40 | The report identifies three blank lines where the style rule expects fewer. | Remove the extra blank lines. |
+   | Insufficient whitespace before inline comment | Low | Flake8 (E261) | Style | 69 | There is not enough spacing before an inline comment. | Add the required two spaces before the inline comment. |
+   | Missing whitespace after comma | Low | Flake8 (E231) | Style | 74 | A comma is not followed by a space. | Add a space after the comma. |
 
-   Make sure the line numbers match the initial reports. Keep the original reports so you can compare them after fixing the code.
+   Make sure the line numbers match your own initial reports. Keep the original reports so you can compare them after fixing the code. If your report differs from the screenshot, use your report's actual finding and line number instead.
 
 5. **Fix the code and verify your changes.**
 
