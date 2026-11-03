@@ -40,17 +40,34 @@ The code works, but only just. It has quality, style and security problems of th
 
    | Issue | Type | Line(s) | Description | Fix Approach |
    |-------|------|---------|-------------|--------------|
-   | ...   | ...  | ...     | ...         | ...          |
+   | ...   | ...   | ...     | ...         | ...          |
 
-5. **Fix the code.** Fix at least 4 of the issues you documented, then rerun all three tools to confirm they are gone. Repeat until you are satisfied. The program should still do its job when you are done.
+5. **Fix the code and verify your changes.**
+
+   - Review the issues in `issues.md` and fix at least **4 of the issues you documented** in `todo_manager.py`.
+   - Preserve the program's existing functionality. Do not remove or change the demonstrated task-manager behaviour just to improve the tool scores.
+   - After making the fixes, run all three analysis tools again and save the final reports (overwrite the earlier reports or use clearly named final-report files):
+
+     ```
+     python -m pylint todo_manager.py > pylint_report.txt
+     python -m bandit -r todo_manager.py > bandit_report.txt
+     python -m flake8 todo_manager.py > flake8_report.txt
+     ```
+
+   - Compare the final reports with your initial reports. Confirm that the issues you fixed no longer appear, and review any warnings that remain.
+   - Run `python todo_manager.py` again and compare its output with the initial demonstration to check that the program still works.
+   - Update `issues.md` to identify which issues were fixed and note any remaining issues. Do not claim an issue is fixed unless the final reports support it.
+
+   Repeat the fix-and-check cycle if necessary until the results are satisfactory.
 
 6. **Reflect.** Answer the four reflection questions from the handout in `reflection.md`.
 
 ## Deliverables
 
 - `todo_manager.py`: your cleaned version, with at least 4 issues fixed.
-- `issues.md`: the completed issue table.
+- `issues.md`: the completed issue table, including the fixes and any remaining issues.
 - `reflection.md`: your answers to the reflection questions.
+- `pylint_report.txt`, `bandit_report.txt`, and `flake8_report.txt`: the final analysis reports.
 
 **Target:** aim for a Pylint score above 9.5 on your final file. A perfect 10.00/10 is very good.
 
